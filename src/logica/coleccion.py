@@ -220,12 +220,18 @@ class Coleccion():
     def buscar_interprete(self, buscar, interprete_nombre):
         buscar = True
         if buscar:
-            interpretes = [elem.__dict__ for elem in session.query(Interprete).filter(
-            Interprete.nombre.ilike('%{0}%'.format(interprete_nombre))).all()]
+            try:
+                interpretes = [elem.__dict__ for elem in session.query(Interprete).filter(
+                Interprete.nombre.ilike('%{0}%'.format(interprete_nombre))).all()]
+            except:
+                pass
         return interpretes
     
     def dar_interpretes_2(self):
         dar = True
         if dar:
-            interpretes = [elem.__dict__ for elem in session.query(Interprete).all()]
+            try:
+                interpretes = [elem.__dict__ for elem in session.query(Interprete).all()]
+            except:
+                pass
         return interpretes
