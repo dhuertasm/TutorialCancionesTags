@@ -244,7 +244,7 @@ class Coleccion():
                 pass
         return interpretes
     
-    def buscar_i(self, intreprete_id, interprete_nombre):
+    def buscar_i(self, interprete_nombre):
         buscar = True
         if buscar:
             try:
