@@ -217,6 +217,7 @@ class Coleccion():
             Interprete.nombre.ilike('%{0}%'.format(interprete_nombre))).all()]
         return interpretes
     
+    
     def buscar_interprete(self, buscar, interprete_nombre):
         buscar = True
         if buscar:
