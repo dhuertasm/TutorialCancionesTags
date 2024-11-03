@@ -66,6 +66,7 @@ class Coleccion():
         albumes = [elem.__dict__ for elem in
                    session.query(Album).filter(Album.titulo.ilike('%{0}%'.format(album_titulo))).all()]
         return albumes
+    
 
     def agregar_cancion(self, titulo, minutos, segundos, compositor, album_id, interpretes):
         interpretesCancion = []
