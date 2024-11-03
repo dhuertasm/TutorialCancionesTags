@@ -133,7 +133,7 @@ class Coleccion():
                 return True
             else:
                 return False
-        except:
+        except Exception as e:
             return False
 
     def dar_canciones(self):
@@ -252,6 +252,6 @@ class Coleccion():
             try:
                 interpretes = [elem.__dict__ for elem in session.query(Interprete).filter(
                 Interprete.nombre.ilike('%{0}%'.format(interprete_nombre))).all()]
-            except:
-                pass
+            except Exception as e:
+                print(e)
         return interpretes
