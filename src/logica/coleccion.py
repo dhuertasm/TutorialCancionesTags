@@ -60,6 +60,7 @@ class Coleccion():
 
     def dar_album_por_id(self, album_id):
         return session.query(Album).get(album_id).__dict__
+    
 
     def buscar_albumes_por_titulo(self, album_titulo):
         albumes = [elem.__dict__ for elem in
