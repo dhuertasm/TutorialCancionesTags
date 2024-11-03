@@ -2,6 +2,7 @@ from src.modelo.album import Album, Medio
 from src.modelo.cancion import Cancion
 from src.modelo.declarative_base import engine, Base, session
 from src.modelo.interprete import Interprete
+from sqlalchemy.exc import SQLAlchemyError
 
 
 class Coleccion():
@@ -38,11 +39,14 @@ class Coleccion():
     def eliminar_album(self, album_id):
         try:
             album = session.query(Album).filter(Album.id == album_id).first()
+            if album is None:
+                return False
+
             session.delete(album)
             session.commit()
             return True
-        except:
-            return False
+        except SQLAlchemyError as e:
+            raise e
 
     def dar_albumes(self):
         albumes = [elem.__dict__ for elem in session.query(Album).all()]
