@@ -133,7 +133,7 @@ class Coleccion():
                 return True
             else:
                 return False
-        except:
+        except Exception as e:
             return False
 
     def dar_canciones(self):
