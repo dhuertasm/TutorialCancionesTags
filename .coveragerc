@@ -10,6 +10,7 @@ source =
     src/
     */site-packages/
 
+
 [xml]
 output = coverage-reports/coverage.xml
 
