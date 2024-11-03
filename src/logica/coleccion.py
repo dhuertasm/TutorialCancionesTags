@@ -247,7 +247,7 @@ class Coleccion():
                 print(e)
         return interpretes
     
-    def buscar_2(self, encontrar, intreprete_id, interprete_nombre):
+    def buscar_2(self, encontrar, interprete_nombre):
         if encontrar:
             try:
                 interpretes = [elem.__dict__ for elem in session.query(Interprete).filter(
