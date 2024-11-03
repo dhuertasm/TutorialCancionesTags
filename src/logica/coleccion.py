@@ -46,7 +46,8 @@ class Coleccion():
             session.commit()
             return True
         except SQLAlchemyError as e:
-            raise e
+            print(f"Error al eliminar el álbum: {e}")
+            return False
 
     def dar_albumes(self):
         albumes = [elem.__dict__ for elem in session.query(Album).all()]
