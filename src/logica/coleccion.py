@@ -246,3 +246,13 @@ class Coleccion():
             except:
                 pass
         return interpretes
+    
+    def buscar_2(self, encontrar, intreprete_id, interprete_nombre):
+        encontrar = True
+        if encontrar:
+            try:
+                interpretes = [elem.__dict__ for elem in session.query(Interprete).filter(
+                Interprete.nombre.ilike('%{0}%'.format(interprete_nombre))).all()]
+            except:
+                pass
+        return interpretes
