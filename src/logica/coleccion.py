@@ -210,7 +210,8 @@ class Coleccion():
             session.delete(interprete)
             session.commit()
             return True
-        except:
+        except SQLAlchemyError as e:
+            print(f"Error al eliminar el álbum: {e}")
             return False
 
     def dar_interpretes(self):
